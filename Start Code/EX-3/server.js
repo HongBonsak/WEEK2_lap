@@ -54,7 +54,7 @@ const server = http.createServer((req, res) => {
             const timestamp = new Date().toISOString();
             const line = `[${timestamp}] Name: ${name}\n`;
 
-            fs.appendFile('submissions.txt', line, (err) => {
+            fs.appendFile('./submissions.txt', line, (err) => {
                 if (err) {
                     console.error('Failed to write to file:', err);
                     res.writeHead(500, { 'Content-Type': 'text/plain' });
@@ -90,6 +90,6 @@ const server = http.createServer((req, res) => {
     res.end('404 Not Found');
 });
 
-server.listen(3000, () => {
-    console.log('Server is running at http://localhost:3000');
+server.listen(3069, () => {
+    console.log('Server is running at http://localhost:3069');
 });
